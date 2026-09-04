@@ -1,10 +1,16 @@
 import Button from "./Button";
 
-function Profile({ name, job, image }) {
+function Profile({ name, job, image, connected }) {
+    const statusColor = connected ? "bg-green-500" : "bg-red-500";
+
     return (
-        <section className="flex items-center gap-4 border-2 border-gray-200 bg-gray-50 p-4 rounded-xl">
-            <div className="flex gap-4">
-                <img src={image} alt={name} className="h-12 w-12 rounded-full object-cover" />
+        <section className="flex w-full items-center justify-between gap-4 rounded-xl border-2 border-gray-200 bg-gray-50 p-4">
+            <div className="flex min-w-0 items-center gap-4">
+                <div className="relative">
+                    <img src={image} alt={name} className="h-12 w-12 rounded-full object-cover" />
+                    <span className={`absolute right-0 bottom-0 block h-3 w-3 rounded-full  ${statusColor}`} />
+                </div>
+
                 <div className="min-w-0">
                     <h2 className="font-bold text-black">{name}</h2>
                     <p className="mt-0.5 text-sm font-medium text-gray-400">{job}</p>
