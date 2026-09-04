@@ -3,5 +3,6 @@ import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: "/React/",
+  base: "https://CloeDelage2301.github.io/"
+  base : "https://CloeDelage2301.github.io/MMI3"
 });
